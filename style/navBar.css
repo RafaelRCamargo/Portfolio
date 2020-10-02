@@ -1,0 +1,184 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 1s ease;
+  padding: 40px 100px;
+  opacity: 0;
+}
+
+header.sticky {
+  padding: 25px 100px;
+  background: transparent;
+  opacity: 1;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+  color: #cdcdcd;
+}
+
+header .logo {
+  font-family: "logo";
+  position: relative;
+  font-weight: lighter;
+  text-decoration: none;
+  font-size: 2.5em;
+  transition: 1s ease;
+  font-weight: lighter;
+  z-index: 4 !important;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 1s ease;
+  z-index: 1;
+}
+
+header {
+  text-align: center;
+  z-index: 2 !important;
+}
+
+.burguer {
+  margin-top: 7px;
+  display: none;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.burguer div {
+  content: "";
+  width: 45px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: #cdcdcd;
+  margin: 6px;
+  transition: all 1.3s ease;
+}
+
+@media screen and (max-width: 1300px) {
+  header .logo {
+    font-size: 2em;
+    color: #cdcdcd;
+  }
+  header ul li a {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .burguer {
+    margin-right: -1em;
+    display: block;
+    z-index: 100000 !important;
+  }
+
+  .burguer div {
+    background-color: #cdcdcd;
+    box-shadow: 2px 2px 2px #16161680;
+    transition: 1s ease;
+  }
+
+  header .nav-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background-color: #cdcdcd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 2.5em;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+  }
+
+  header ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header.sticky ul li a {
+    color: #262626;
+    opacity: 0;
+    padding: 0.8em;
+  }
+
+  header.sticky .logo {
+    font-size: 1.8em;
+    color: #cdcdcd;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header.sticky .logo {
+    margin-left: -2em;
+  }
+  .burguer {
+    margin-right: -4.75em;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  header .nav-links {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-height: 570px) {
+  header .nav-links {
+    font-size: 1.5em;
+  }
+  header.sticky .logo {
+    font-size: 1.5em;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-405deg) translate(-5px, 12px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(405deg) translate(-5px, -12px);
+}
